@@ -23,4 +23,17 @@ public class TractorService {
 		return tractorRepository.findAll();
 	}
 
+	public Tractor updateTractors(Tractor tractor, Long id) {
+		// TODO Auto-generated method stub
+		return tractorRepository.findById(id).get();
+	}
+
+	public String deleteTractorById(Long id) {
+		// TODO Auto-generated method stub
+		 tractorRepository.deleteById(id);
+		 return "successfully delete";
+		 
+		
+	}
+
 }
