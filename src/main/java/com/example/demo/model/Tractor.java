@@ -16,9 +16,7 @@ import lombok.NoArgsConstructor;
 	@Entity
 
 public class Tractor {
-		
 		@Id
-
 		@GeneratedValue(strategy = GenerationType.IDENTITY) 
 		private Long id;
 

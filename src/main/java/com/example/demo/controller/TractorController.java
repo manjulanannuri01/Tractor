@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,15 +37,15 @@ public class TractorController {
 	// Update operation
 	@PutMapping("updateTractor/{id}")
     public Tractor updateTractorsById(@PathVariable long id, @RequestBody Tractor tractor) {
-		return  tractorService.updateTractors(tractor,id);
+		return  tractorService.updateDetails(tractor,id);
     	
     }
  
     // Delete operation
 	@DeleteMapping("deleteTractor/{id}")
-    public String deleteTractorById(Long Id) {
-    	 tractorService.deleteTractorById(Id);
-    	 return "successfully delete";
+	public void deleteTractor(@PathVariable("id") Long id) {
+	    // actual delete logic
+	    tractorService.deleteTractorById(id);
 	}
 
 }
